@@ -476,7 +476,9 @@ header .flex {
   color: var(--white-color);
 }
 
-.footer h2 {
+.footer .social-title {
+  margin-top: 0;
+  margin-bottom: 0px;
   font-weight: 700;
   line-height: 1.143;
   text-transform: uppercase;
@@ -491,6 +493,12 @@ header .flex {
   fill: var(--white-color);
 }
 
+.footer .social-list {
+  display: inline-flex;
+  align-items: baseline;
+  margin-top: 20px;
+}
+
 .footer .social-list > li:not(:last-child) {
   margin-right: 10px;
 }
@@ -499,6 +507,11 @@ header .flex {
 .footer .social.link:focus {
   background-color: var(--accent-color);
 }
+
+.footer .social-list-wrap {
+  margin-top: 12px;
+}
+
 .footer-adress {
   margin-right: 70px;
 }
@@ -521,9 +534,6 @@ header .flex {
   color: var(--opacity-white-color);
 }
 
-.footer .social-list {
-  justify-content: right;
-}
 /* Стили Портфолио */
 
 .works-examples {
@@ -586,6 +596,12 @@ header .flex {
   border-bottom: 1px solid var(--border-color);
   border-left: 1px solid var(--border-color);
   background: var(--white-color);
+}
+
+.examples-item:hover,
+.examples-item:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .examples .link {
