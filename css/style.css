@@ -46,6 +46,7 @@
   --secondary-accent-color: #f5f4fa;
   --dark-background-color: #2f303a;
   --border-color: #eeeeee;
+  --icon-color: #afb1b8;
 }
 
 html {
@@ -191,16 +192,41 @@ header .flex {
   margin-right: 50px;
 }
 .contacts .link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-size: 14px;
   font-weight: 500;
   font-style: normal;
   line-height: 1.143;
   letter-spacing: 0.02em;
-  color: #757575;
+  color: var(--primary-text-color);
 }
 
+.mail-icon {
+  width: 16px;
+  height: 12px;
+  margin-right: 10px;
+  fill: currentColor;
+}
+
+.phone-icon {
+  width: 10px;
+  height: 16px;
+  margin-right: 10px;
+  fill: currentColor;
+}
 .contacts .link:hover,
-.contacts .link:focus {
+.contacts .link:focus,
+.contacts .link:hover .mail-icon,
+.contacts .link:focus .mail-icon {
+  color: var(--accent-color);
+}
+
+.contacts .link:hover .mail-icon,
+.contacts .link:focus .mail-icon,
+.contacts .link:hover .phone-icon,
+.contacts .link:focus .phone-icon {
   color: var(--accent-color);
 }
 
@@ -210,7 +236,13 @@ header .flex {
   padding-bottom: 200px;
   height: 600px;
   text-align: center;
-  background-color: var(--dark-background-color);
+  background-image: linear-gradient(
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(../img/hero-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .hero .container {
@@ -268,6 +300,28 @@ header .flex {
 .benefit.list {
   margin-left: -30px;
   margin-top: -30px;
+}
+
+.benefit-item {
+  flex-basis: calc(100% / 4 - 30px);
+  height: 120px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 25px 100px;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--secondary-accent-color);
+  border-radius: 4px;
+}
+.benefit-icon.list {
+  display: flex;
+  margin-left: -30px;
+  margin-top: -30px;
+}
+
+.benefit-icon {
+  width: 70px;
+  height: 70px;
 }
 
 .benefit-title {
@@ -340,15 +394,113 @@ header .flex {
   line-height: 1.188;
 }
 
+.social-list {
+  margin-top: 16px;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+  fill: var(--icon-color);
+}
+
+.social-icon:not(:last-child) {
+  margin-right: 10px;
+}
+
+.social.link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+
+.social.link:hover,
+.social.link:focus {
+  background-color: var(--accent-color);
+}
+
+.social.link:hover .social-icon,
+.social.link:focus .social-icon {
+  fill: var(--white-color);
+}
+
+/* Стили секции Постоянные клиенты */
+
+.clients.section {
+  padding-bottom: 94px;
+}
+
+.client-icon {
+  fill: var(--icon-color);
+}
+
+.clients-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 170px;
+  height: 90px;
+  border: 1px solid var(--icon-color);
+  border-radius: 4px;
+}
+
+.clients-link:hover,
+.clients-link:focus {
+  border-color: var(--accent-color);
+}
+
+.clients-link:hover .client-icon,
+.clients-link:focus .client-icon {
+  fill: var(--accent-color);
+}
+.clients-list > li:not(:last-child) {
+  margin-right: 30px;
+}
 /* Стили подвала */
 .footer {
   padding-top: 60px;
   padding-bottom: 60px;
   background-color: var(--dark-background-color);
 }
+
+.footer .container {
+  display: flex;
+}
 .footer .logo {
   margin-bottom: 20px;
   color: var(--white-color);
+}
+
+.footer h2 {
+  font-weight: 700;
+  line-height: 1.143;
+  text-transform: uppercase;
+  color: var(--white-color);
+}
+
+.footer .social.link {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.footer .social-icon {
+  fill: var(--white-color);
+}
+
+.footer .social-list > li:not(:last-child) {
+  margin-right: 10px;
+}
+
+.footer .social.link:hover,
+.footer .social.link:focus {
+  background-color: var(--accent-color);
+}
+.footer-adress {
+  margin-right: 70px;
 }
 
 .adress-list {
@@ -369,6 +521,9 @@ header .flex {
   color: var(--opacity-white-color);
 }
 
+.footer .social-list {
+  justify-content: right;
+}
 /* Стили Портфолио */
 
 .works-examples {
