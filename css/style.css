@@ -470,6 +470,7 @@ header .flex {
 
 .footer .container {
   display: flex;
+  align-items: baseline;
 }
 .footer .logo {
   margin-bottom: 20px;
@@ -509,10 +510,11 @@ header .flex {
 }
 
 .footer .social-list-wrap {
-  margin-top: 12px;
+  align-items: flex-end;
 }
 
 .footer-adress {
+  align-items: baseline;
   margin-right: 70px;
 }
 
