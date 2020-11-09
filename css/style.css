@@ -216,10 +216,9 @@ header .flex {
   margin-right: 10px;
   fill: currentColor;
 }
+
 .contacts .link:hover,
-.contacts .link:focus,
-.contacts .link:hover .mail-icon,
-.contacts .link:focus .mail-icon {
+.contacts .link:focus {
   color: var(--accent-color);
 }
 
